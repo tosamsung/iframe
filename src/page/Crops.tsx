@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import CropService from "../service/CropService"; // Adjust the import path based on your project structure
-import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { CropVariety } from "../entity/CropVariety";
 import UserContext from "../context/UserContext";
 
