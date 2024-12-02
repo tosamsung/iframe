@@ -24,7 +24,7 @@ const GrowthStages: React.FC<GrowthStagesProps> = ({ growthStages }) => {
   });
 
   return (
-    <div className=" md:max-w-[624px] ">
+    <div className=" md:max-w-[624px] sm:min-h-full">
       <table className="min-w-full table-fixed border-collapse border border-white min-h-[328px]">
         <thead>
           <tr className="bg-gray-200 text-left">
