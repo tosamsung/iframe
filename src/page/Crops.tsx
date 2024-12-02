@@ -11,7 +11,6 @@ const DIGIFORCE_DOMAIN = import.meta.env.VITE_DIGIFORCE_API_URL
 
 function Crops() {
   const [crops, setCrops] = useState<CropVariety[]>([]);
-  const navigate = useNavigate(); // Initialize navigate hook
   const userContext = useContext(UserContext)
   const screenSizeDevice = userContext?.screenSizeDevice
   const handleSelectvariety = (id: string) => {
