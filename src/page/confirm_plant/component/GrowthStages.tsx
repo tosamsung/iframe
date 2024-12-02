@@ -7,7 +7,7 @@ interface Fertilizer {
 
 interface GrowthStage {
   phase: string;
-  start_day: string;
+  start_day: string; // Assuming format like "YYYY-MM-DD"
   watering_count: number;
   watering_frequency: string;
   fertilizer: Fertilizer[];
@@ -18,8 +18,13 @@ interface GrowthStagesProps {
 }
 
 const GrowthStages: React.FC<GrowthStagesProps> = ({ growthStages }) => {
+  // Sort by start_day (assuming ISO 8601 format like "YYYY-MM-DD")
+  const sortedStages = [...growthStages].sort((a, b) => {
+    return new Date(a.start_day).getTime() - new Date(b.start_day).getTime();
+  });
+
   return (
-    <div className=" md:max-w-[624px] max-h-[328px]">
+    <div className=" md:max-w-[624px] ">
       <table className="min-w-full table-fixed border-collapse border border-white min-h-[328px]">
         <thead>
           <tr className="bg-gray-200 text-left">
@@ -31,12 +36,14 @@ const GrowthStages: React.FC<GrowthStagesProps> = ({ growthStages }) => {
           </tr>
         </thead>
         <tbody>
-          {growthStages.map((stage, index) => (
+          {sortedStages.map((stage, index) => (
             <tr className="hover:bg-gray-100 bg-white" key={index}>
               <td className="pl-4 py-2 border border-gray-300 text-sm">{StaticData.getPhase().get(stage.phase)}</td>
               <td className="pl-4 py-2 border border-gray-300 text-sm">{stage.start_day}</td>
               <td className="hidden sm:table-cell px-4 py-2 border border-gray-300 text-sm">{stage.watering_count}</td>
-              <td className="hidden sm:table-cell px-4 py-2 border border-gray-300 text-sm">{StaticData.getWaterFrequency().get(stage.watering_frequency)}</td>
+              <td className="hidden sm:table-cell px-4 py-2 border border-gray-300 text-sm">
+                {StaticData.getWaterFrequency().get(stage.watering_frequency)}
+              </td>
               <td className="px-4 py-2 border border-gray-300 text-sm">
                 {stage.fertilizer.map((fertilize) => fertilize.name).join(", ")}
               </td>
@@ -45,8 +52,6 @@ const GrowthStages: React.FC<GrowthStagesProps> = ({ growthStages }) => {
         </tbody>
       </table>
     </div>
-
-
   );
 };
 

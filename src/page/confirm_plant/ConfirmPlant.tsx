@@ -21,6 +21,8 @@ const ConfirmPlant: React.FC = () => {
     const fetchData = async () => {
       if (varietyId) {
         cropService.getVarietyAllInfoById(varietyId).then((response: any) => {
+          console.log(response);
+          
           StaticData.ensureInitialized().then(() => {
             setIsStaticDataInitialized(true);
             setVariety(response.data);
@@ -65,7 +67,7 @@ const ConfirmPlant: React.FC = () => {
   return (
     <div className="w-full justify-items-center">
       <div className=" min-h-[100vh] max-w-[624px]">
-        <div className=" bg-white shadow-md rounded-lg p-6 min-h-[100vh] ">
+        <div className=" bg-white shadow-md rounded-lg p-6 ">
           <div className="flex justify-end items-center">
             <div className="flex items-center space-x-4">
               <h2 className="text-gray-800 text-sm md:text-base">
