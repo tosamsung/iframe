@@ -38,7 +38,7 @@ interface VarietyDetailProps {
 
 const VarietyDetail: React.FC<VarietyDetailProps> = ({ variety }) => {
   return (
-    <div className="md:min-w-[624px] md:min-h-[328px]">
+    <div className="md:max-w-[624px] md:max-h-[328px]">
       <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 mb-4">
         <div>
           <p className="text-sm md:text-base">

@@ -63,9 +63,9 @@ const ConfirmPlant: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-[100vh]">
-      <div>
-        <div className=" bg-white shadow-md rounded-lg p-6 min-h-[100vh]">
+    <div className="w-full justify-items-center">
+      <div className=" min-h-[100vh] max-w-[624px]">
+        <div className=" bg-white shadow-md rounded-lg p-6 min-h-[100vh] ">
           <div className="flex justify-end items-center">
             <div className="flex items-center space-x-4">
               <h2 className="text-gray-800 text-sm md:text-base">
@@ -134,7 +134,7 @@ const ConfirmPlant: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 };
 
