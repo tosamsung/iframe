@@ -110,7 +110,7 @@ const ConfirmPlant: React.FC = () => {
 
           {/* Tab content */}
 
-          <TabComponent>
+          <TabComponent previousButtonText="Chi tiết" nextButtonText="Giai đoạn phát triển">
             <div>
               <VarietyDetail variety={variety} />
             </div>
