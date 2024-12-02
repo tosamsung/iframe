@@ -1,21 +1,30 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CropService from "../service/CropService"; // Adjust the import path based on your project structure
-import { Crop } from "../entity/Crop";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { CropVariety } from "../entity/CropVariety";
+import UserContext from "../context/UserContext";
 
 const cropService = new CropService();
+const DIGIFORCE_DOMAIN = import.meta.env.VITE_DIGIFORCE_API_URL
+  ? import.meta.env.VITE_DIGIFORCE_API_URL.replace(/\/$/, '')
+  : ''
 
 function Crops() {
-  const [crops, setCrops] = useState<Crop[]>([]);
+  const [crops, setCrops] = useState<CropVariety[]>([]);
   const navigate = useNavigate(); // Initialize navigate hook
-
+  const userContext = useContext(UserContext)
+  const screenSizeDevice = userContext?.screenSizeDevice
   const handleSelectvariety = (id: string) => {
-    navigate(`variety?cropid=${id}`);
+    WA.player.state.varietyId = id
+    WA.player.state.screen = screenSizeDevice
+    WA.player.state.saveVariable("openListCrops", false)
+    WA.player.state.saveVariable("openConfirmPlant", true)
 
   };
 
   useEffect(() => {
-    cropService.getAllCrops().then((response: any) => {
+    cropService.getAllVariety().then((response: any) => {
+      console.log(response);
       setCrops(response.data);
     });
   }, []);
@@ -27,15 +36,14 @@ function Crops() {
         {/* Grid layout with 4 columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {crops.length > 0 ? (
-            crops.map((crop: Crop) => (
+            crops.map((crop: CropVariety) => (
               <div
                 key={crop.id}
                 className="p-4 bg-white shadow rounded-lg flex flex-col items-center text-center"
               >
                 <img
-                  src="/images/seed-1.jpg"
-                  alt={crop.name}
-                  className="w-32 h-32 object-cover mb-4"
+                  src={DIGIFORCE_DOMAIN + crop.avatar[0].url} alt={crop.name}
+                  className="w-32 h-32 object-cover mb-4 rounded-full"
                 />
                 <h2 className="text-lg font-semibold text-gray-700">{crop.name}</h2>
                 <button

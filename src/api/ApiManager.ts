@@ -40,6 +40,10 @@ export default class ApiManager {
         const URI = `/crop_variety:get?filterByTk=${varietyId}&filter=%7B%7D`
         return this.httpDigiforce.get(URI, undefined, DIGOFORCE_API_KEY);
     }
+    getAllVariety(){
+        const URI= `crop_variety:list?pageSize=20&appends[]=avatar&appends[]=crop&filter=%7B%7D`
+        return this.httpDigiforce.get(URI, undefined, DIGOFORCE_API_KEY);
+    }
     getVarietyAllInfoById(varietyId: string) {
         const URI = `/crop_variety:get?appends[]=crop&appends[]=avatar&appends[]=image_list&appends[]=protest_plant_disease&appends[]=common_plant_disease&appends[]=protest_plant_pest&appends[]=common_plant_pest&appends[]=seeding_method&appends[]=growth_stages&appends[]=growth_stages.fertilizer&appends[]=growth_stages.fertilizer_method&appends[]=growth_stages.pest_control&filterByTk=${varietyId}&filter=%7B%7D`
         return this.httpDigiforce.get(URI, undefined, DIGOFORCE_API_KEY);

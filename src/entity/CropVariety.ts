@@ -37,5 +37,6 @@ export interface CropVariety {
     points: number;
     createdById: number;
     updatedById: number;
+    avatar:any;
     harvest_days: number;
 }

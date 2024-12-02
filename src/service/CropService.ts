@@ -27,6 +27,11 @@ export default class CropService {
             return response;
         })
     }
+    getAllVariety() {
+        return this.apiManager.getAllVariety().then((response: any) => {
+            return response;
+        })
+    }
     getCropVarietyFieldByFieldName(fieldName:string){
         return this.apiManager.getCropVarietyFieldByFieldName(fieldName).then((response: any) => {
             return response;
