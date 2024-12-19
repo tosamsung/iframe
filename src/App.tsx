@@ -12,8 +12,8 @@ const ConfirmWatering = lazy(() => import("./page/confirm_watering/ConfirmWateri
 const BedDetail = lazy(() => import("./page/bed/BedDetail"));
 const Error = lazy(() => import("./page/notificate/Error"));
 const NotFound = lazy(() => import("./common/NotFound"));
-const Login = lazy(() => import("./page/auth/login"));
-const Register = lazy(() => import("./page/auth/register"));
+// const Login = lazy(() => import("./page/auth/login"));
+// const Register = lazy(() => import("./page/auth/register"));
 const UserDetail = lazy(() => import("./page/user/UserDetail"));
 const PlotDetail = lazy(() => import("./page/Plot/PlotDetail"));
 const Wallet = lazy(() => import("./page/user/Wallet"));
@@ -37,8 +37,8 @@ function App() {
 
                 <Route path="error" element={<Error />} />
                 <Route path="success" element={<Success />} />
-                <Route path="login" element={<Login />} />
-                <Route path="register" element={<Register />} />
+                {/* <Route path="login" element={<Login />} /> */}
+                {/* <Route path="register" element={<Register />} /> */}
                 <Route path="plot/:plotId" element={<PlotDetail />} />
                 {/* bed */}
                 <Route path="bed/status" element={<BedStatus />} />
