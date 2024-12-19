@@ -1,6 +1,4 @@
 import { Button } from 'antd';
-import coinIcon from '../../assets/image/coin.png'; // Replace with the path to your coin icon
-
 function CofirmWatering() {
 
     const close = () => {

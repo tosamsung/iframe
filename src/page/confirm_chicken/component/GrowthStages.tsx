@@ -1,10 +1,11 @@
 import React from "react";
-import { PetGrowthStage } from "../../../entity/Pet";
+// import { PetGrowthStage } from "../../../entity/Pet";
 import { getPetPhaseDescription } from "../../../entity/enum/PetGrowthPhase";
+import { ChickenGrowthStage } from "../../../entity/Chicken";
 
 
 interface GrowthStagesProps {
-  growthStages: PetGrowthStage[];
+  growthStages: ChickenGrowthStage[];
 }
 
 const GrowthStages: React.FC<GrowthStagesProps> = ({ growthStages }) => {
