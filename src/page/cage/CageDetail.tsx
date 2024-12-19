@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { Cage } from "../../entity/Cage";
+import React from "react";
+
+// { useState } 
+// import { Cage } from "../../entity/Cage";
 
 const CageDetail: React.FC = () => {
-    const [cage, setCage] = useState<Cage | null>(null);
+    // const [cage, setCage] = useState<Cage | null>(null);
 
     return (
         <div className="w-99">

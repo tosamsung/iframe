@@ -1,33 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import AuthService from '../../service/AuthService';
-import UserService from '../../service/UserService';
+import React, { useEffect } from 'react';
+// import AuthService from '../../service/AuthService';
+// import UserService from '../../service/UserService';
 const Wallet: React.FC = () => {
-    const [balance, setBalance] = useState(true);
-    const [isLoading, setIsLoading] = useState(true);
-    const authService = new AuthService();
-    const userService = new UserService()
+    // const [balance, setBalance] = useState(true);
+    // const [isLoading, setIsLoading] = useState(true);
+    // const authService = new AuthService();
+    // const userService = new UserService()
     // Format the balance with commas
     useEffect(() => {
-        const fetchData = async () => {
-            const token = WA.player.state.DIGIFORCE_TOKEN as string;
-            if (token) {
-                try {
-                    authService.auth(token).then((response: any) => {
-                        const userId = response.data.id
-                        userService.getWalletByUserId(userId).then((response: any) => {
-                            setBalance(response.data)
-                        })
-                    })
-                } catch (error) {
-                    console.error('Failed to fetch user details:', error);
-                } finally {
-                    setIsLoading(false);
-                }
-            } else {
-                setIsLoading(false);
-            }
-        };
-        fetchData()
+        // const fetchData = async () => {
+        //     const token = WA.player.state.DIGIFORCE_TOKEN as string;
+        //     if (token) {
+        //         try {
+        //             authService.auth(token).then((response: any) => {
+        //                 const userId = response.data.id
+        //                 userService.getWalletByUserId(userId).then((response: any) => {
+        //                     setBalance(response.data)
+        //                 })
+        //             })
+        //         } catch (error) {
+        //             console.error('Failed to fetch user details:', error);
+        //         } finally {
+        //             setIsLoading(false);
+        //         }
+        //     } else {
+        //         setIsLoading(false);
+        //     }
+        // };
+        // fetchData()
     }, [])
     return (
         <div className="min-h-screen flex justify-center items-center">

@@ -1,5 +1,5 @@
 import React from "react";
-import { PetGrowthStage } from "../../../entity/Chicken";
+import { PetGrowthStage } from "../../../entity/Pet";
 import { getPetPhaseDescription } from "../../../entity/enum/PetGrowthPhase";
 
 

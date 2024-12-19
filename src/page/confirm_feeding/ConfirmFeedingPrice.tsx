@@ -1,30 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Button } from 'antd';
-import { Bed, BedHistory } from '../../entity/Bed';
-import ChickenService from '../../service/ChickenService';
-import { PetGrowthStage } from '../../entity/Pet';
-interface Field {
-    pets_name: string;
-    start_time: string;
-    days_elapsed: number;
-    current_stage_start_day: number;
-    food_per_meal: number;
-    total_feed_smaller: number;
-    total_feed_reference: number;
-    total_cost: number;
-    uom_type: string;
-}
-interface Bill {
-    products: Field[]
-    total: number
-}
+// import { Bed, BedHistory } from '../../entity/Bed';
+// import ChickenService from '../../service/ChickenService';
+// import { PetGrowthStage } from '../../entity/Pet';
+// interface Field {
+//     pets_name: string;
+//     start_time: string;
+//     days_elapsed: number;
+//     current_stage_start_day: number;
+//     food_per_meal: number;
+//     total_feed_smaller: number;
+//     total_feed_reference: number;
+//     total_cost: number;
+//     uom_type: string;
+// }
+// interface Bill {
+//     products: Field[]
+//     total: number
+// }
 function ConfirmFeedingPrice() {
-    const [loading, setLoading] = useState<boolean>(true);
-    const [bill, setBill] = useState<Bill>({
-        products: [],
-        total: 0
-    });
-    const chickenService = new ChickenService()
+    // const [loading, setLoading] = useState<boolean>(true);
+    // const [bill, setBill] = useState<Bill>({
+    //     products: [],
+    //     total: 0
+    // });
+    // const chickenService = new ChickenService()
     useEffect(() => {
         // async function main(bed: Bed): Promise<number> {
         //     const timeNow = new Date(); // Current time

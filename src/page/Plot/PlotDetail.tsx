@@ -11,7 +11,7 @@ function PlotDetail() {
   const { plotId } = useParams<{ plotId: string }>();
   const [loading, setLoading] = useState<boolean>(true);
   const [plot, setPlot] = useState<Plot | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  // const [error, setError] = useState<string | null>(null);
   // const formattedBalance = balance.toLocaleString('en-US');
 
   useEffect(() => {
@@ -72,7 +72,7 @@ function PlotDetail() {
               <h3 className="ml-2 text-xl font-semibold text-white">Chi tiết lô</h3>
 
             </div>
-            <h2 className="text-gray-800 text-sm md:text-base text-white">
+            <h2 className="text-gray-800 text-sm md:text-base ">
               <span className='font-medium text-white'>Chi phí : </span>
               {plot.price.toLocaleString('en-US')}
               <img
