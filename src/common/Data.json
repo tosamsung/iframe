@@ -1,0 +1,18 @@
+{
+    "bed": {
+        "status": {
+            "prepare": {
+                "name": "prepare",
+                "message": "Đang trong quá trình chuẩn bị"
+            },
+            "new": {
+                "name": "new",
+                "message": "Luống mới"
+            },
+            "using": {
+                "name": "using",
+                "message": "Cây đang trong quá trình phát triển"
+            }
+        }
+    }
+}
